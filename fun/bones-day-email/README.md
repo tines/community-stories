@@ -17,17 +17,17 @@ Originally our Step 1 was "Register as a Twitter Developer" until we discovered 
 So we've made things even easier for you.
 
 * Sign up to our always-free [Community Edition](https://www.tines.com/?utm_source=marketing&utm_medium=github&utm_campaign=bonesdayemail)
-* Download [our simplified Tines Story](easy-bones-day.json) and import as a new Story into your Tines Account
+* Download [our simplified Tines Story](https://raw.githubusercontent.com/tines/community-stories/main/fun/bones-day-email/easy-bones-day.json) and import as a new Story into your Tines Account
 * Create a Resource called `Bones Email` and set it to your email address
 * Publish your Story to make schedulable
 * Click on the first Action and edit the Schedule to one that suits you
 * Done!
 
-Any problems, give us a shout on [Twitter](https://twitter.com/tines_io/) or [LinkedIn](https://www.linkedin.com/company/tines-io)
+Any problems, let us know on [Twitter](https://twitter.com/tines_io/) or [LinkedIn](https://www.linkedin.com/company/tines-io)
 
 ![Pug Gif](bones-no-bones.gif)
 
 Gif by [Stefanie Shank](https://giphy.com/gifs/qJfDnSZD1wYZdFm4sw)
 
-(Of course if you have a Twitter Developer Account, just go ahead and use [Conor's original Story](bones-day-email.json) and set the `Twitter Token` Credential and `Bones Email` Resource.)
+(Of course if you have a Twitter Developer Account, just go ahead and use [Conor's original Story](https://raw.githubusercontent.com/tines/community-stories/main/fun/bones-day-email/bones-day-email.json) and set the `Twitter Token` Credential and `Bones Email` Resource.)
 
