@@ -3,5 +3,8 @@ This repo will contain a range of interesting, useful and sometimes fun Stories 
 
 Click on the directories above to learn more about each of the Stories.
 
-Any problems, give us a shout on [Twitter](https://twitter.com/tines_io/), [LinkedIn](https://www.linkedin.com/company/tines-io) or Community Slack
+
+![Tines](email.png)
+
+Any problems, let us know on [Twitter](https://twitter.com/tines_io/), [LinkedIn](https://www.linkedin.com/company/tines-io) or Community Slack
 

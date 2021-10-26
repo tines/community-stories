@@ -1,7 +1,8 @@
 # Tines Community Fun Stories
-There is still so much you can learn from these lightweight or lighthearted Stories. 
+There is still so much you can learn from these lightweight or lighthearted Stories. We'll be adding lots in the coming months. Watch this Repo to be notified of new ones.
 
-To get started, just:
+![Smalltalk](smalltalk.png)
+## Getting Started
 
 1. Sign-up for an always-free [Tines Community Edition Account](https://www.tines.com/?utm_source=marketing&utm_medium=github&utm_campaign=communitystories)
 2. Save the JSON of the Story you are interested in (make sure to click the RAW link and then do Save-As)
@@ -11,3 +12,5 @@ To get started, just:
 
 ## The Stories
 1. [Bones Day Email](bones-day-email) - Is it a #BonesDay or a #NoBonesDay?
+
+
