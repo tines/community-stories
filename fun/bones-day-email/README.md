@@ -23,6 +23,8 @@ So we've made things even easier for you.
 * Click on the first Action and edit the Schedule to one that suits you
 * Done!
 
+Any problems, give us a shout on [Twitter](https://twitter.com/tines_io/) or [LinkedIn](https://www.linkedin.com/company/tines-io)
+
 ![Pug Gif](bones-no-bones.gif)
 
 Gif by [Stefanie Shank](https://giphy.com/gifs/qJfDnSZD1wYZdFm4sw)
