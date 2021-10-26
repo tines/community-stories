@@ -16,12 +16,12 @@ Originally our Step 1 was "Register as a Twitter Developer" until we discovered 
 
 So we've made things even easier for you.
 
-* Sign up to our always-free [Community Edition](https://www.tines.com/?utm_source=marketing&utm_medium=github&utm_campaign=bonesdayemail)
-* Download [our simplified Tines Story](https://raw.githubusercontent.com/tines/community-stories/main/fun/bones-day-email/easy-bones-day.json) and import as a new Story into your Tines Account
-* Create a Resource called `Bones Email` and set it to your email address
-* Publish your Story to make schedulable
-* Click on the first Action and edit the Schedule to one that suits you
-* Done!
+1. Sign up to our always-free [Community Edition](https://www.tines.com/?utm_source=marketing&utm_medium=github&utm_campaign=bonesdayemail)
+2. Download [our simplified Tines Story](https://raw.githubusercontent.com/tines/community-stories/main/fun/bones-day-email/easy-bones-day.json) and import as a new Story into your Tines Account
+3. Create a Resource called `Bones Email` and set it to your email address
+4. Publish your Story to make schedulable
+5. Click on the first Action and edit the Schedule to one that suits you
+6. Done!
 
 Any problems, let us know on [Twitter](https://twitter.com/tines_io/) or [LinkedIn](https://www.linkedin.com/company/tines-io)
 
