@@ -1,0 +1,135 @@
+{
+  "schema_version": 3,
+  "name": "Bones Day Email",
+  "description": null,
+  "guid": "d0ab3d7b5fa70ad56133b1cbf6c07fb9",
+  "exported_at": "2021-10-21T17:51:57Z",
+  "agents": [
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Request to api.twitter.com",
+      "disabled": false,
+      "guid": "1454faccaada542554ffc5925c03d693",
+      "options": {
+        "url": "https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=NoodlesBonesDay&count=1",
+        "method": "get",
+        "headers": {
+          "Authorization": "Bearer {{.CREDENTIAL.twitter_token }}"
+        }
+      },
+      "schedule": [
+        {
+          "cron": "0 15 */1 * *",
+          "timezone": "Europe/Dublin"
+        }
+      ],
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "Check if No Bones",
+      "disabled": false,
+      "guid": "5b7f868d54ae1d25a706bddcfa7dc458",
+      "options": {
+        "rules": [
+          {
+            "type": "regex",
+            "value": "No Bones",
+            "path": "{{.request_to_api_twitter_com.body.first.text }}"
+          },
+          {
+            "type": "regex",
+            "value": "#NoBones",
+            "path": "{{.request_to_api_twitter_com.body.first.text }}"
+          }
+        ],
+        "must_match": 1
+      },
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "Check if Bones",
+      "disabled": false,
+      "guid": "952bd2cf1d9fbc1ed18ee7c3551b05a6",
+      "options": {
+        "rules": [
+          {
+            "type": "!regex",
+            "value": "No Bones",
+            "path": "{{.request_to_api_twitter_com.body.first.text }}"
+          },
+          {
+            "type": "!regex",
+            "value": "#NoBones",
+            "path": "{{.request_to_api_twitter_com.body.first.text }}"
+          }
+        ]
+      },
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EmailAgent",
+      "name": "No Bones Email",
+      "disabled": false,
+      "guid": "6c3d71cc9d72945243f2420db0b469c9",
+      "options": {
+        "recipients": [
+          "{{RESOURCE.bones_email}}"
+        ],
+        "subject": "No Bones Day",
+        "body": "Today is a No Bones Day"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EmailAgent",
+      "name": "Bones Email",
+      "disabled": false,
+      "guid": "da1f8a00c7fa3271d2cf481ff585b088",
+      "options": {
+        "recipients": [
+          "{{RESOURCE.bones_email}}"
+        ],
+        "subject": "Bones Day! 🦴",
+        "body": "Today is a Bones Day!"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    }
+  ],
+  "diagram_notes": [],
+  "links": [
+    {
+      "source": 0,
+      "receiver": 1
+    },
+    {
+      "source": 0,
+      "receiver": 2
+    },
+    {
+      "source": 1,
+      "receiver": 3
+    },
+    {
+      "source": 2,
+      "receiver": 4
+    }
+  ],
+  "diagram_layout": "{\"1454faccaada542554ffc5925c03d693\":[361.0,330.0],\"5b7f868d54ae1d25a706bddcfa7dc458\":[360.0,450.0],\"952bd2cf1d9fbc1ed18ee7c3551b05a6\":[600.0,450.0],\"6c3d71cc9d72945243f2420db0b469c9\":[360.0,570.0],\"da1f8a00c7fa3271d2cf481ff585b088\":[600.0,570.0]}",
+  "send_to_story_enabled": false,
+  "entry_agent_guid": null,
+  "exit_agent_guids": [],
+  "exit_agent_guid": null,
+  "send_to_stories": [],
+  "form": {
+    "name": "Bones Day Email Form",
+    "description": "",
+    "fields": [],
+    "visibility": "tenant",
+    "agent_guid": null,
+    "success_message": "Thank you for your submission"
+  }
+}

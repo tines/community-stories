@@ -1,0 +1,132 @@
+{
+  "schema_version": 3,
+  "name": "Easy Bones Day",
+  "description": "Get the most important news of the day in your Inbox every morning. Is today a #BonesDay or a #NoBonesDay?",
+  "guid": "d43286283f099a52809e683241383138",
+  "exported_at": "2021-10-26T13:44:00Z",
+  "agents": [
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Check the Bones Day API",
+      "disabled": false,
+      "guid": "3faf54a869a182a5e8042b61aa882a14",
+      "options": {
+        "url": "https://go.tines.xyz/BonesDayAPI",
+        "method": "get",
+        "headers": {}
+      },
+      "schedule": [
+        {
+          "cron": "0 3 */1 * *",
+          "timezone": "Europe/Dublin"
+        }
+      ],
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "Check if No Bones",
+      "disabled": false,
+      "guid": "f91ff3ede816e761260aee959bbe131d",
+      "options": {
+        "rules": [
+          {
+            "type": "field==value",
+            "value": "false",
+            "path": "{{.check_the_bones_day_api.body.bones_day }}"
+          }
+        ],
+        "must_match": 1
+      },
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EmailAgent",
+      "name": "No Bones Email",
+      "disabled": false,
+      "guid": "209da2f501db20469cd8d3635a4ecc0c",
+      "options": {
+        "recipients": [
+          "{{RESOURCE.bones_email}}"
+        ],
+        "subject": "No Bones Day",
+        "body": "Today is a No Bones Day"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EmailAgent",
+      "name": "Bones Email",
+      "disabled": false,
+      "guid": "3e15ab1a350ee4cab7a6ff0e51dfe1dd",
+      "options": {
+        "recipients": [
+          "{{RESOURCE.bones_email}}"
+        ],
+        "subject": "Bones Day! 🦴",
+        "body": "Today is a Bones Day!"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "Check if Bones",
+      "disabled": false,
+      "guid": "5199710284ec02f636d7d189bd3bc134",
+      "options": {
+        "rules": [
+          {
+            "type": "field==value",
+            "value": "true",
+            "path": "{{.check_the_bones_day_api.body.bones_day }}"
+          }
+        ]
+      },
+      "keep_events_for": 0
+    }
+  ],
+  "diagram_notes": [
+    {
+      "content": "# Bones Day Email\n\n1. Create a `Bones Email` Resource and set it to your email address \n2. Click on the blue box and set the schedule you want.\n3. Click `Run` to manually check everything is working ok.",
+      "position": [
+        450.0,
+        120.0
+      ],
+      "guid": "ce6eb4c2d8b78b2a64d9be41af714a9c"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "receiver": 1
+    },
+    {
+      "source": 0,
+      "receiver": 4
+    },
+    {
+      "source": 1,
+      "receiver": 2
+    },
+    {
+      "source": 4,
+      "receiver": 3
+    }
+  ],
+  "diagram_layout": "{\"3faf54a869a182a5e8042b61aa882a14\":[361.0,330.0],\"f91ff3ede816e761260aee959bbe131d\":[360.0,450.0],\"209da2f501db20469cd8d3635a4ecc0c\":[360.0,570.0],\"3e15ab1a350ee4cab7a6ff0e51dfe1dd\":[645.0,570.0],\"5199710284ec02f636d7d189bd3bc134\":[644.0,445.0]}",
+  "send_to_story_enabled": false,
+  "entry_agent_guid": null,
+  "exit_agent_guids": [],
+  "exit_agent_guid": null,
+  "send_to_stories": [],
+  "form": {
+    "name": "Bones Day Email Form",
+    "description": "",
+    "fields": [],
+    "visibility": "tenant",
+    "agent_guid": null,
+    "success_message": "Thank you for your submission"
+  }
+}
