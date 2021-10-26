@@ -7,7 +7,7 @@ Like all good Tinos, he felt compelled to dogfood (sorry) the answer. A very ver
 
 ![Email](email.png)
 
-Rather than keep this revolutionary solution to ourselves, we decided to share it to the world, so you too can get an email every morning letting you know which kind of day it is.
+Rather than keep this revolutionary solution to ourselves, we decided to share it to the world, so you too can get an email every morning (PST) letting you know which kind of day it is.
 
 ![Story](bones_story.png)
 
