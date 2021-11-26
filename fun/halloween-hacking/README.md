@@ -3,7 +3,7 @@
 
 It involved Blockly, [Espruino](https://www.espruino.com), [Node-RED](https://nodered.org/) and [Tines](https://www.tines.com).
 
-The Tines Story takes notifications on a webhook from Node-RED running on a Raspberry Pi that there are people approaching the door and does two things:
+Node-RED running on a Raspberry Pi sends notifications to the Tines Story webhook that there are people approaching the door. The Story then does two things:
 
 * Sends a notification on Telegram 
 * Logs the timestamp to Google Sheets
