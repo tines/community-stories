@@ -1,5 +1,5 @@
 # Decade Old News by Email
-This Story enables you to get 10 world news stories from today 10 years ago, in your Inbox each morning, from The Guardian newspaper API.
+This Story enables you to get 10 world news stories from today 10 years ago, in your Inbox each morning, from [The Guardian newspaper API](https://open-platform.theguardian.com/access/).
 
 Setup is very straightforward:
 
