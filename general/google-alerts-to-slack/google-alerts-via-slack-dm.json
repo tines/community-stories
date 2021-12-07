@@ -1,0 +1,112 @@
+{
+  "schema_version": 3,
+  "name": "Google Alerts via Slack DM",
+  "description": "Uses the RSS Feed feature of Google Alerts to send you a Slack DM for every new alert on the topic you set.",
+  "guid": "7e0be4625e900ca22d837ba572327e20",
+  "exported_at": "2021-12-07T14:27:27Z",
+  "agents": [
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Get Google Alert RSS Feed",
+      "disabled": false,
+      "guid": "bd1b7be48ee4f387749715d30ec085e6",
+      "options": {
+        "url": "{{.RESOURCE.google_alerts_rss_url}}",
+        "content_type": "xml",
+        "method": "get"
+      },
+      "schedule": [
+        {
+          "cron": "0 */1 * * *",
+          "timezone": "Europe/Dublin"
+        }
+      ],
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EventTransformationAgent",
+      "name": "Explode Array of incoming Alerts",
+      "disabled": false,
+      "guid": "d60803b59932a50b731d014ac3e61296",
+      "options": {
+        "mode": "explode",
+        "path": "{{.get_google_alert_rss_feed.body.feed.entry }}",
+        "to": "individual_record"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EventTransformationAgent",
+      "name": "Get Original Story URL",
+      "disabled": false,
+      "guid": "586518baf7ad8a82381c24397578ffb8",
+      "options": {
+        "mode": "extract",
+        "matchers": [
+          {
+            "path": "{{.explode_array_of_incoming_alerts.individual_record.link.href}}",
+            "regexp": "url=([^&]*)",
+            "to": "urls"
+          }
+        ]
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Send Alert to me by Slack DM",
+      "disabled": false,
+      "guid": "e13d3d8666823f791390822b1805cfa0",
+      "options": {
+        "url": "{{.CREDENTIAL.slack_dm_webhook_url}}",
+        "content_type": "json",
+        "method": "post",
+        "payload": {
+          "text": "New Google Alert:\n\n<{{.get_original_story_url.urls.first }} | {{.explode_array_of_incoming_alerts.individual_record.title  | strip_html }}>"
+        }
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    }
+  ],
+  "diagram_notes": [
+    {
+      "content": "* Create a new alert for your topic of interest in Google Alerts and set delivery to RSS Feed\n* Create a Resource here called `Alert URL` and set it to the RSS Feed URL\n*  Setup an incoming Webhook on Slack using [these instructions](https://api.slack.com/messaging/webhooks#enable_webhooks)\n* Create a Credential here called Slack DM Webhook URL and set it to the URL you receive above\n* Publish this Story\n* It's set to run once per hour and will send you any new alerts by Slack DM",
+      "position": [
+        360.0,
+        315.0
+      ],
+      "guid": "627eb26dac9e97a539d1507ff6b0a74d"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "receiver": 1
+    },
+    {
+      "source": 1,
+      "receiver": 2
+    },
+    {
+      "source": 2,
+      "receiver": 3
+    }
+  ],
+  "diagram_layout": "{\"bd1b7be48ee4f387749715d30ec085e6\":[696.0,218.0],\"d60803b59932a50b731d014ac3e61296\":[690.0,345.0],\"586518baf7ad8a82381c24397578ffb8\":[690.0,465.0],\"e13d3d8666823f791390822b1805cfa0\":[690.0,600.0]}",
+  "send_to_story_enabled": false,
+  "entry_agent_guid": null,
+  "exit_agent_guids": [],
+  "exit_agent_guid": null,
+  "send_to_stories": [],
+  "form": {
+    "name": "Google Alerts via Slack DM Form",
+    "description": "",
+    "fields": [],
+    "visibility": "tenant",
+    "agent_guid": null,
+    "success_message": "Thank you for your submission"
+  }
+}
