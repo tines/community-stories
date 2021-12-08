@@ -1,0 +1,160 @@
+date,song,artist,featuring,weeknum
+2016-01-01,Hello,Adele,,1
+2016-01-08,Hello,Adele,,2
+2016-01-15,Hello,Adele,,3
+2016-01-22,Sorry,Justin Bieber,,4
+2016-01-29,Sorry,Justin Bieber,,5
+2016-02-05,Sorry,Justin Bieber,,6
+2016-02-12,Love Yourself,Justin Bieber,,7
+2016-02-19,Pillowtalk,Zayn,,8
+2016-02-26,Love Yourself,Justin Bieber,,9
+2016-03-04,Work,Rihanna,Drake,10
+2016-03-11,Work,Rihanna,Drake,11
+2016-03-18,Work,Rihanna,Drake,12
+2016-03-25,Work,Rihanna,Drake,13
+2016-04-01,Work,Rihanna,Drake,14
+2016-04-08,Work,Rihanna,Drake,15
+2016-04-15,Work,Rihanna,Drake,16
+2016-04-22,Work,Rihanna,Drake,17
+2016-04-29,Work,Rihanna,Drake,18
+2016-05-06,Panda,Desiigner,,19
+2016-05-13,Panda,Desiigner,,20
+2016-05-20,One Dance,Drake,WizKid & Kyla,21
+2016-05-27,Cant Stop The Feeling!,Justin Timberlake,,22
+2016-06-03,One Dance,Drake,WizKid & Kyla,23
+2016-06-10,One Dance,Drake,WizKid & Kyla,24
+2016-06-17,One Dance,Drake,WizKid & Kyla,25
+2016-06-24,One Dance,Drake,WizKid & Kyla,26
+2016-07-01,One Dance,Drake,WizKid & Kyla,27
+2016-07-08,One Dance,Drake,WizKid & Kyla,28
+2016-07-15,One Dance,Drake,WizKid & Kyla,29
+2016-07-22,One Dance,Drake,WizKid & Kyla,30
+2016-07-29,One Dance,Drake,WizKid & Kyla,31
+2016-08-05,Cheap Thrills,Sia,Sean Paul,32
+2016-08-12,Cheap Thrills,Sia,Sean Paul,33
+2016-08-19,Cheap Thrills,Sia,Sean Paul,34
+2016-08-26,Cheap Thrills,Sia,Sean Paul,35
+2016-09-02,Closer,The Chainsmokers,Halsey,36
+2016-09-09,Closer,The Chainsmokers,Halsey,37
+2016-09-16,Closer,The Chainsmokers,Halsey,38
+2016-09-23,Closer,The Chainsmokers,Halsey,39
+2016-09-30,Closer,The Chainsmokers,Halsey,40
+2016-10-07,Closer,The Chainsmokers,Halsey,41
+2016-10-14,Closer,The Chainsmokers,Halsey,42
+2016-10-21,Closer,The Chainsmokers,Halsey,43
+2016-10-28,Closer,The Chainsmokers,Halsey,44
+2016-11-04,Closer,The Chainsmokers,Halsey,45
+2016-11-11,Closer,The Chainsmokers,Halsey,46
+2016-11-18,Closer,The Chainsmokers,Halsey,47
+2016-11-25,Black Beatles,Rae Sremmurd,Gucci Mane,48
+2016-12-02,Black Beatles,Rae Sremmurd,Gucci Mane,49
+2016-12-09,Black Beatles,Rae Sremmurd,Gucci Mane,50
+2016-12-16,Black Beatles,Rae Sremmurd,Gucci Mane,51
+2016-12-23,Black Beatles,Rae Sremmurd,Gucci Mane,52
+2016-12-30,Black Beatles,Rae Sremmurd,Gucci Mane,53
+2017-01-01,Starboy,The Weeknd,Daft Punk,54
+2017-01-08,Black Beatles,Rae Sremmurd,Gucci Mane,55
+2017-01-15,Bad And Boujee,Migos,Lil Uzi Vert,56
+2017-01-22,Shape Of You,Ed Sheeran,,57
+2017-01-29,Bad And Boujee,Migos,Lil Uzi Vert,58
+2017-02-05,Bad And Boujee,Migos,Lil Uzi Vert,59
+2017-02-12,Shape Of You,Ed Sheeran,,60
+2017-02-19,Shape Of You,Ed Sheeran,,61
+2017-02-26,Shape Of You,Ed Sheeran,,62
+2017-03-05,Shape Of You,Ed Sheeran,,63
+2017-03-12,Shape Of You,Ed Sheeran,,64
+2017-03-19,Shape Of You,Ed Sheeran,,65
+2017-03-26,Shape Of You,Ed Sheeran,,66
+2017-04-02,Shape Of You,Ed Sheeran,,67
+2017-04-09,Shape Of You,Ed Sheeran,,68
+2017-04-16,Shape Of You,Ed Sheeran,,69
+2017-04-23,Shape Of You,Ed Sheeran,,70
+2017-04-30,Humble.,Kendrick Lamar,,71
+2017-05-07,Thats What I Like,Bruno Mars,,72
+2017-05-14,Im The One,DJ Khaled,"Justin Bieber,  Quavo,  Chance The Rapper & Lil Wayne",73
+2017-05-21,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,74
+2017-05-28,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,75
+2017-06-04,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,76
+2017-06-11,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,77
+2017-06-18,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,78
+2017-06-25,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,79
+2017-07-02,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,80
+2017-07-09,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,81
+2017-07-16,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,82
+2017-07-23,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,83
+2017-07-30,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,84
+2017-08-06,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,85
+2017-08-13,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,86
+2017-08-20,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,87
+2017-08-27,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,88
+2017-09-03,Despacito,Luis Fonsi & Daddy Yankee,Justin Bieber,89
+2017-09-10,Look What You Made Me Do,Taylor Swift,,90
+2017-09-17,Look What You Made Me Do,Taylor Swift,,91
+2017-09-24,Look What You Made Me Do,Taylor Swift,,92
+2017-10-01,Bodak Yellow (Money Moves),Cardi B,,93
+2017-10-08,Bodak Yellow (Money Moves),Cardi B,,94
+2017-10-15,Bodak Yellow (Money Moves),Cardi B,,95
+2017-10-22,Rockstar,Post Malone,21 Savage,96
+2017-10-29,Rockstar,Post Malone,21 Savage,97
+2017-11-05,Rockstar,Post Malone,21 Savage,98
+2017-11-12,Rockstar,Post Malone,21 Savage,99
+2017-11-19,Rockstar,Post Malone,21 Savage,100
+2017-11-26,Rockstar,Post Malone,21 Savage,101
+2017-12-03,Rockstar,Post Malone,21 Savage,102
+2017-12-10,Rockstar,Post Malone,21 Savage,103
+2017-12-17,Perfect,Ed Sheeran,,104
+2017-12-24,Perfect,Ed Sheeran,,105
+2017-12-31,Perfect,Ed Sheeran,,106
+2018-01-01,Perfect,Ed Sheeran,,107
+2018-01-08,Perfect,Ed Sheeran,,108
+2018-01-15,Perfect,Ed Sheeran,,109
+2018-01-22,Havana,Camila Cabello,Young Thug,110
+2018-01-29,Gods Plan,Drake,,111
+2018-02-05,Gods Plan,Drake,,112
+2018-02-12,Gods Plan,Drake,,113
+2018-02-19,Gods Plan,Drake,,114
+2018-02-26,Gods Plan,Drake,,115
+2018-03-05,Gods Plan,Drake,,116
+2018-03-12,Gods Plan,Drake,,117
+2018-03-19,Gods Plan,Drake,,118
+2018-03-26,Gods Plan,Drake,,119
+2018-04-02,Gods Plan,Drake,,120
+2018-04-09,Gods Plan,Drake,,121
+2018-04-16,Nice For What,Drake,,122
+2018-04-23,Nice For What,Drake,,123
+2018-04-30,Nice For What,Drake,,124
+2018-05-07,Nice For What,Drake,,125
+2018-05-14,This Is America,Childish Gambino,,126
+2018-05-21,This Is America,Childish Gambino,,127
+2018-05-28,Nice For What,Drake,,128
+2018-06-04,Nice For What,Drake,,129
+2018-06-11,Psycho,Post Malone,Ty Dolla $ign,130
+2018-06-18,Nice For What,Drake,,131
+2018-06-25,Sad!,XXXTENTACION,,132
+2018-07-02,I Like It,"Cardi B,  Bad Bunny & J Balvin",,133
+2018-07-09,Nice For What,Drake,,134
+2018-07-16,In My Feelings,Drake,,135
+2018-07-23,In My Feelings,Drake,,136
+2018-07-30,In My Feelings,Drake,,137
+2018-08-06,In My Feelings,Drake,,138
+2018-08-13,In My Feelings,Drake,,139
+2018-08-20,In My Feelings,Drake,,140
+2018-08-27,In My Feelings,Drake,,141
+2018-09-03,In My Feelings,Drake,,142
+2018-09-10,In My Feelings,Drake,,143
+2018-09-17,In My Feelings,Drake,,144
+2018-09-24,Girls Like You,Maroon 5,Cardi B,145
+2018-10-01,Girls Like You,Maroon 5,Cardi B,146
+2018-10-08,Girls Like You,Maroon 5,Cardi B,147
+2018-10-15,Girls Like You,Maroon 5,Cardi B,148
+2018-10-22,Girls Like You,Maroon 5,Cardi B,149
+2018-10-29,Girls Like You,Maroon 5,Cardi B,150
+2018-11-05,Girls Like You,Maroon 5,Cardi B,151
+2018-11-12,"Thank U,  Next",Ariana Grande,,152
+2018-11-19,"Thank U,  Next",Ariana Grande,,153
+2018-11-26,"Thank U,  Next",Ariana Grande,,154
+2018-12-03,Sicko Mode,Travis Scott,,155
+2018-12-10,"Thank U,  Next",Ariana Grande,,156
+2018-12-17,"Thank U,  Next",Ariana Grande,,157
+2018-12-24,"Thank U,  Next",Ariana Grande,,158
+2018-12-31,"Thank U,  Next",Ariana Grande,,159

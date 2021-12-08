@@ -1,0 +1,84 @@
+{
+  "schema_version": 4,
+  "name": "Billboard Number One Five Years Ago Today",
+  "description": "Scrape Wikipedia to find out the number one song this week five years ago.",
+  "guid": "406cfed600699abf5b90d022c5fdf75d",
+  "exported_at": "2021-12-08T18:09:45Z",
+  "agents": [
+    {
+      "type": "Agents::EmailAgent",
+      "name": "Send Spotify URL via Email",
+      "disabled": false,
+      "guid": "470cbca022b797fa66cb476bb4b8b9cd",
+      "options": {
+        "recipients": [
+          "{{.RESOURCE.on_this_day_email}}"
+        ],
+        "subject": "Today's Billboard Hot 100 Number One Song Five Years Ago",
+        "body": "<a href=\"\">{{.search_for_number_one_song_five_years_ago_in_mongodb.body.document.song }} by {{.search_for_number_one_song_five_years_ago_in_mongodb.body.document.artist }}</a> was Number One on the Billboard Hot-100 today five years ago.\n\n<br><br>\n\n<a href=\"https://play.spotify.com/search/artist:{{.search_for_number_one_song_five_years_ago_in_mongodb.body.document.artist }}%20track:{{.search_for_number_one_song_five_years_ago_in_mongodb.body.document.song }}\">Play on Spotify</a>\n\n\n"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Search for number one song five years ago in MongoDB",
+      "disabled": false,
+      "guid": "2d031d197a45a5652f6f9f6ec7a542f3",
+      "options": {
+        "url": "https://data.mongodb-api.com/app/{{.RESOURCE.mongodb_data_api_app_id}}/endpoint/data/beta/action/findOne",
+        "method": "post",
+        "content_type": "json",
+        "payload": {
+          "dataSource": "{{.RESOURCE.mongodb_cluster_name}}",
+          "database": "billboard",
+          "collection": "hot100",
+          "filter": {
+            "weeknum": "{% assign fiveyearsago=\"now\" | date: \"%s\" | minus : 157680000 %}{% assign datastart='2016-01-01' | date: \"%s\" %}{{ fiveyearsago | minus: datastart | divided_by: 3600 | divided_by: 24 | divided_by: 7 | round }}"
+          }
+        },
+        "headers": {
+          "Access-Control-Request-Headers": "*",
+          "api-key": "{{.CREDENTIAL.mongodb_data_api_key}}"
+        }
+      },
+      "schedule": [
+        {
+          "cron": "0 7 * * 1",
+          "timezone": "Europe/Dublin"
+        }
+      ],
+      "keep_events_for": 0
+    }
+  ],
+  "diagram_notes": [
+    {
+      "content": "The number one Billboard Hot-100 song for every week in 2016, 2017 and 2018 is in a MongoDB Atlas Collection. You can import it into your own Atlas account from the CSV file in [our Community repo](https://github.com/tines/community-stories)\n\nCreate a Resource called `{{.RESOURCE.on_this_day_email}}` with your email address in it\n\nCreate a Resource called `{{.RESOURCE.mongodb_data_api_app_id}}` using the information from your MongoDB Data API screen\n\nCreate a Resource called `{{.RESOURCE.mongodb_cluster_name}}`\n using the information from your MongoDB Data API screen\n\nCreate a Credential called `{{.CREDENTIAL.mongodb_data_api_key}}`\n using the information from your MongoDB Data API screen\n",
+      "position": [
+        120.0,
+        75.0
+      ],
+      "guid": "be58f61c1713b18fa6c5e9538b20cb23"
+    }
+  ],
+  "links": [
+    {
+      "source": 1,
+      "receiver": 0
+    }
+  ],
+  "diagram_layout": "{\"470cbca022b797fa66cb476bb4b8b9cd\":[450.0,270.0],\"2d031d197a45a5652f6f9f6ec7a542f3\":[450.0,135.0]}",
+  "send_to_story_enabled": false,
+  "entry_agent_guid": null,
+  "exit_agent_guids": [],
+  "exit_agent_guid": null,
+  "send_to_stories": [],
+  "form": {
+    "name": "Billboard Number One Five Years Ago Today Form",
+    "description": "",
+    "fields": [],
+    "visibility": "tenant",
+    "agent_guid": null,
+    "success_message": "Thank you for your submission"
+  }
+}
