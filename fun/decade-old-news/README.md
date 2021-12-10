@@ -7,4 +7,8 @@ Setup is very straightforward:
 * Import it into your Tines account
 * Follow the remainder of the instructions in the Annotation inside the Story
 
+### Story
 ![Decade Old News](decade_old_news.png)
+
+### Output
+![Decade Old News Email](news_10_years_ago_email.png)

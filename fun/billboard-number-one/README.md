@@ -13,4 +13,8 @@ mongoimport --uri mongodb+srv://USERNAME:PASWORD@MONGODB_SERVER_NAME/billboard -
 
 * Follow the remainder of the instructions in the Annotation inside the Story
 
+### Story
 ![Number Ones](billboard_number_ones.png)
+
+### Output
+![Number One Email](billboard_number_one_email.png)
