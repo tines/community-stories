@@ -5,8 +5,9 @@ As Kurt said "If you're a Java shop and not already panicking over log4j2, you p
 
 ## Setup
 * Import [the Story](cisa-advisory-feed-slack.json) into your Tines account
-* Then set {{.CREDENTIAL.YOUR_BOT_TOKEN}} to your Slack Bot Token
-* It's currently set to run once per hour
+* Set `{{.CREDENTIAL.YOUR_BOT_TOKEN}}` to your Slack Bot Token
+* Publish the Story to enable scheduling
+* It's currently configured to run once per hour
 
 ## Story
 ![CISA to Slack](cisa-to-slack.png)
