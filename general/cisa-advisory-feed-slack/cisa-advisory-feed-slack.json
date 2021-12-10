@@ -1,0 +1,180 @@
+{
+  "schema_version": 4,
+  "name": "CISA Advisory Feed",
+  "description": null,
+  "guid": "26d5639a5f9526b5c49d630bda976587",
+  "exported_at": "2021-12-10T17:04:26Z",
+  "agents": [
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Get CISA RSS",
+      "disabled": false,
+      "guid": "e6dc43fbcbb2fc6f24becd90ccac082d",
+      "options": {
+        "url": "https://us-cert.cisa.gov/ncas/current-activity.xml",
+        "content_type": "xml",
+        "method": "get"
+      },
+      "schedule": [
+        {
+          "cron": "0 */1 * * *",
+          "timezone": "America/Los_Angeles"
+        }
+      ],
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EventTransformationAgent",
+      "name": "Enumerate RSS items",
+      "disabled": false,
+      "guid": "f767091d64e7dab18108a4643235a6b6",
+      "options": {
+        "mode": "explode",
+        "path": "{{ .get_cisa_rss.body.rss.channel.item }}",
+        "to": "item"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "Dependency Filter",
+      "disabled": false,
+      "guid": "02c0b219792a5b8cfde02ca6dc625587",
+      "options": {
+        "rules": [
+          {
+            "type": "regex",
+            "value": "(npm|nuget|pip|maven)",
+            "path": "{{ .enumerate_rss_items.item.description }}"
+          },
+          {
+            "type": "regex",
+            "value": "package",
+            "path": "{{ .enumerate_rss_items.item.description }}"
+          }
+        ]
+      },
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::TriggerAgent",
+      "name": "Language Filter",
+      "disabled": false,
+      "guid": "d7eb7072e21e015a21415c7f6e9fd7ec",
+      "options": {
+        "rules": [
+          {
+            "type": "regex",
+            "value": "(?i)(java|php|node|python|\\.NET)",
+            "path": "{{ .enumerate_rss_items.item.description }}"
+          }
+        ]
+      },
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Slack PostMessage",
+      "disabled": false,
+      "guid": "8bb8b6dfc761bcc83fee1a0f958f05d4",
+      "options": {
+        "url": "https://slack.com/api/chat.postMessage",
+        "content_type": "json",
+        "method": "post",
+        "payload": {
+          "text": "<!here> CISA has reported a supply-chain issue with a package: {{.enumerate_rss_items.item.link }}",
+          "channel": "YOUR_SLACK_CHANNEL"
+        },
+        "headers": {
+          "Authorization": "Bearer {{.CREDENTIAL.YOUR_BOT_TOKEN}}"
+        }
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::HTTPRequestAgent",
+      "name": "Slack PostMessage",
+      "disabled": false,
+      "guid": "ce0e012b0cb5dd08a71eebad047ca9c8",
+      "options": {
+        "url": "https://slack.com/api/chat.postMessage",
+        "content_type": "json",
+        "method": "post",
+        "payload": {
+          "text": "<!here> CISA has reported a supply-chain issue with a language: {{.enumerate_rss_items.item.link }}",
+          "channel": "YOUR_SLACK_CHANNEL"
+        },
+        "headers": {
+          "Authorization": "Bearer {{.CREDENTIAL.YOUR_BOT_TOKEN}}"
+        }
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    },
+    {
+      "type": "Agents::EventTransformationAgent",
+      "name": "deduplicate",
+      "disabled": false,
+      "guid": "9a1453fb97944f3c2ab09b959e46c576",
+      "options": {
+        "mode": "deduplicate",
+        "path": "{{ .enumerate_rss_items.item.link }}",
+        "period": "86400"
+      },
+      "schedule": null,
+      "keep_events_for": 0
+    }
+  ],
+  "diagram_notes": [
+    {
+      "content": "This monitors the Cybersecurity and Infrastructure Security Agency (CISA) RSS feed for potential compromises of the following languages:\n\nJava \nPHP\nNode\n.NET\nPython\n\nas well as the following package managers\n\nnpm\nnuget\npip\nmaven\n\n\n",
+      "position": [
+        15.0,
+        -90.0
+      ],
+      "guid": "36224344d9883c57b35e07366de332f5"
+    }
+  ],
+  "links": [
+    {
+      "source": 0,
+      "receiver": 1
+    },
+    {
+      "source": 1,
+      "receiver": 6
+    },
+    {
+      "source": 2,
+      "receiver": 4
+    },
+    {
+      "source": 3,
+      "receiver": 5
+    },
+    {
+      "source": 6,
+      "receiver": 3
+    },
+    {
+      "source": 6,
+      "receiver": 2
+    }
+  ],
+  "diagram_layout": "{\"e6dc43fbcbb2fc6f24becd90ccac082d\":[360.0,90.0],\"f767091d64e7dab18108a4643235a6b6\":[360.0,180.0],\"02c0b219792a5b8cfde02ca6dc625587\":[480.0,390.0],\"d7eb7072e21e015a21415c7f6e9fd7ec\":[210.0,405.0],\"8bb8b6dfc761bcc83fee1a0f958f05d4\":[480.0,525.0],\"ce0e012b0cb5dd08a71eebad047ca9c8\":[210.0,525.0],\"9a1453fb97944f3c2ab09b959e46c576\":[360.0,270.0]}",
+  "send_to_story_enabled": false,
+  "entry_agent_guid": null,
+  "exit_agent_guids": [],
+  "exit_agent_guid": null,
+  "send_to_stories": [],
+  "form": {
+    "name": "CISA Advisory Feed Form",
+    "description": "",
+    "fields": [],
+    "visibility": "tenant",
+    "agent_guid": null,
+    "success_message": "Thank you for your submission"
+  }
+}
