@@ -5,4 +5,8 @@ This Story enables you to get Google Alerts about your subject of choice via Sla
 * Import it into your Tines account
 * Follow the remainder of the instructions in the Annotation inside the Story
 
+### Story
 ![Google Alerts via Slack DM](google_alerts_via_slack_dm.png)
+
+### Output
+![Google Alerts in Slack](no-code-alerts.png)
