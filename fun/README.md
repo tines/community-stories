@@ -10,7 +10,5 @@ There is still so much you can learn from these lightweight or lighthearted Stor
 4. Read the instructions here or inside the Story on how to configure it
 5. Let us know how you get on via [Twitter](https://twitter.com/tines_io/), [LinkedIn](https://www.linkedin.com/company/tines-io) or Community Slack
 
-## The Stories
-1. [Bones Day Email](bones-day-email) - Is it a #BonesDay or a #NoBonesDay?
 
 
